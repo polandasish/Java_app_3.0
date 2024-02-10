@@ -93,7 +93,7 @@ pipeline{
         stage('Push Artifactory to JFrog'){
          when { expression {  params.action == 'create' } }
             steps{
-               // dir('/var/lib/jenkins/workspace/demo-pipeline/target'){
+               dir('/var/lib/jenkins/workspace/demo-pipeline/target'){
                        // sh 'cd /var/lib/jenkins/workspace/demo-pipeline/target/'
                           // sh 'cd /var/lib/jenkins/.m2/repository/com/minikube/sample/kubernetes-configmap-reload/0.0.1-SNAPSHOT/'
                    rtUpload (
