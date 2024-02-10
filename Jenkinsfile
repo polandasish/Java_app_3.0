@@ -80,7 +80,7 @@ pipeline{
                script{
                    rtServer (
                                 id: 'artifactory-1',
-                                url: 'http://3.16.130.196:8082',
+                                url: 'http://3.16.130.196:8081',
                                   credentialsId: 'artifactory-1',
                                    bypassProxy: true,
                                    timeout: 300
