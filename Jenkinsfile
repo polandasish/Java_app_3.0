@@ -94,7 +94,8 @@ pipeline{
          when { expression {  params.action == 'create' } }
             steps{
                script{
-                       sh 'cd /var/lib/jenkins/workspace/demo-pipeline/target/'
+                       // sh 'cd /var/lib/jenkins/workspace/demo-pipeline/target/'
+                          sh 'cd /var/lib/jenkins/.m2/repository/com/minikube/sample/kubernetes-configmap-reload/0.0.1-SNAPSHOT/'
                    rtUpload (
                         serverId: 'artifactory-1',
                         spec: '''{
