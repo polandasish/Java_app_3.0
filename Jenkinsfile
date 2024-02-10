@@ -94,6 +94,7 @@ pipeline{
          when { expression {  params.action == 'create' } }
             steps{
                script{
+                       sh 'cd /var/lib/jenkins/workspace/demo-pipeline/target/'
                    rtUpload (
                         serverId: 'artifactory-1',
                         spec: '''{
