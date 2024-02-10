@@ -73,6 +73,24 @@ pipeline{
                }
             }
         }
+
+        stage('connect to JFrog'){
+         //when { expression {  params.action == 'create' } }
+            steps{
+               script{
+                   rtServer (
+                                id: 'artifactory-1',
+                                url: 'http://18.188.49.168:8082/artifactory',
+                                  credentialsId: 'artifactory-1',
+                                   bypassProxy: true,
+                                   timeout: 300
+                   )
+                   
+               }
+            }
+        }
+
+        
             
         stage('Docker Image Build'){
          when { expression {  params.action == 'create' } }
