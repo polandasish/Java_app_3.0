@@ -94,12 +94,19 @@ pipeline{
          when { expression {  params.action == 'create' } }
             steps{
                script{
-                   rtUpload (                               
-                                serverId: 'artifactory-1',
-                                specPath: 'example-repo-local/',
+                   rtUpload (
+                        serverId: 'Artifactory-1',
+                        spec: '''{
+                              "files": [
+                              {
+                                  "pattern": " kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar",
+                                  "target": "example-repo-local/"
+                            }
+                        ]
+                 }''',
                                 
                                               
-                            )
+                )
                    
                }
             }
