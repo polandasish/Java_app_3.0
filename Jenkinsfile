@@ -95,7 +95,7 @@ pipeline{
             steps{
                script{
                    rtUpload (
-                        serverId: 'Artifactory-1',
+                        serverId: 'artifactory-1',
                         spec: '''{
                               "files": [
                               {
