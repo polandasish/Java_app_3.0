@@ -79,7 +79,7 @@ pipeline{
             steps{
                dir('/var/lib/jenkins/workspace/demo-pipeline/target'){
                    rtServer (
-                                id: 'artifactory-1',
+                                id: 'server-1',
                                 url: 'http://18.116.14.30:8082',
                                   credentialsId: 'Jfrog-connection',
                                    bypassProxy: true,
@@ -93,15 +93,15 @@ pipeline{
         stage('Push Artifactory to JFrog'){
          when { expression {  params.action == 'create' } }
             steps{
-               dir('/var/lib/jenkins/workspace/demo-pipeline/target'){
+               // dir('/var/lib/jenkins/workspace/demo-pipeline/target'){
                        // sh 'cd /var/lib/jenkins/workspace/demo-pipeline/target/'
                           // sh 'cd /var/lib/jenkins/.m2/repository/com/minikube/sample/kubernetes-configmap-reload/0.0.1-SNAPSHOT/'
                    rtUpload (
-                        serverId: 'artifactory-1',
+                        serverId: 'server-1',
                         spec: '''{
                               "files": [
                               {
-                                  "pattern": "*.jar",
+                                  "pattern": "kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar",
                                   "target": "artifactory/example-repo-local"
 
                             }
