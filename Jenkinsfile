@@ -102,7 +102,7 @@ pipeline{
                               "files": [
                               {
                                   "pattern": "/var/lib/jenkins/workspace/demo-pipeline/target/*.jar",
-                                  "target": "http://3.16.130.196:8082/artifactory/example-repo-local/
+                                  "target": "/artifactory/example-repo-local/
 "
                             }
                         ]
