@@ -102,7 +102,7 @@ pipeline{
                               "files": [
                               {
                                   "pattern": "*.jar",
-                                  "target": "/tmp/"
+                                  "target": "/artifactory/example-repo-local/"
                             }
                         ]
                  }''',
