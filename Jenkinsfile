@@ -90,6 +90,20 @@ pipeline{
             }
         }
 
+        stage('Push Artifactory to JFrog'){
+         when { expression {  params.action == 'create' } }
+            steps{
+               script{
+                   rtUpload (                               
+                                serverId: 'Artifactory-1',
+                                specPath: 'http://18.188.49.168:8082/artifactory/example-repo-local/',
+                                              
+                            )
+                   
+               }
+            }
+        }
+
         
             
         stage('Docker Image Build'){
