@@ -100,7 +100,7 @@ pipeline{
                         spec: '''{
                               "files": [
                               {
-                                  "pattern": " kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar",
+                                  "pattern": "kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar",
                                   "target": "example-repo-local/"
                             }
                         ]
