@@ -103,7 +103,7 @@ pipeline{
                               {
                                   "pattern": "*.jar",
                                   "target": "example-repo-local"
-"
+
                             }
                         ]
                  }''',
